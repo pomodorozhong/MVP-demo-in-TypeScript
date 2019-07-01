@@ -4,7 +4,7 @@ import { ICookieModel } from "../interface/model/cookieModel.interface";
 import { View } from "../view/view"
 import { CookieModel } from "../model/cookieModel";
 
-export class Presenter implements IPresenter{
+export class Presenter implements IPresenter {
     private view: IView;
     private cookieModel: ICookieModel;
 
@@ -17,11 +17,11 @@ export class Presenter implements IPresenter{
 
     // 這個函數，用來在網頁剛載入時，將畫面上顯示的東西與後台的資料同步
     // 在目前的程式功能中，具體做的事情就是將畫面顯示的餅乾數量，與 Model 內的餅乾數量進行同步
-    initialize() {
+    initialize(): void {
         this.view.toSetCookieCount(this.cookieModel.getCookieCount());
     }
 
-    toGrabCookie() {
+    toGrabCookie(): void {
         // Call Model function to update data.
         this.cookieModel.addCookie();
 
